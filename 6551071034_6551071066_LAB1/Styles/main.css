@@ -17,9 +17,11 @@ body {
     max-width: 1200px;
     margin: 0 auto;
 }
-.container img{
-    width:100px;
+
+.container img {
+    width: 100px;
 }
+
 a {
     text-decoration: none;
     color: inherit;
@@ -45,7 +47,8 @@ ul {
 .logo {
     font-weight: bold;
     font-size: 1.5em;
-    color: #007bff; /* Màu thương hiệu */
+    color: #007bff;
+    /* Màu thương hiệu */
 }
 
 .header-main {
@@ -93,7 +96,8 @@ ul {
 
 .user-actions button {
     padding: 8px 15px;
-    background-color: #ff5722; /* Màu cam nổi bật cho Giỏ hàng */
+    background-color: #ff5722;
+    /* Màu cam nổi bật cho Giỏ hàng */
     color: white;
     border: none;
     border-radius: 4px;
@@ -102,7 +106,8 @@ ul {
 }
 
 .menu-toggle {
-    display: none; /* Ẩn trên desktop */
+    display: none;
+    /* Ẩn trên desktop */
 }
 
 /* -------------------- NAVIGATION -------------------- */
@@ -139,7 +144,8 @@ ul {
     margin-bottom: 30px;
     border-radius: 8px;
 }
-.banner-slider img{
+
+.banner-slider img {
     width: 100%;
 }
 
@@ -165,8 +171,9 @@ ul {
     text-align: center;
     transition: box-shadow 0.3s;
     display: flex;
-  flex-direction: column; /* xếp dọc nội dung */
-  justify-content: space-between;
+    flex-direction: column;
+    /* xếp dọc nội dung */
+    justify-content: space-between;
 }
 
 .product-card:hover {
@@ -185,7 +192,8 @@ ul {
 .product-card h3 {
     font-size: 1.1em;
     margin-bottom: 5px;
-    height: 3.3em; /* Đảm bảo chiều cao thống nhất cho tiêu đề */
+    height: 3.3em;
+    /* Đảm bảo chiều cao thống nhất cho tiêu đề */
     overflow: hidden;
 }
 
@@ -264,6 +272,313 @@ ul {
     background-color: #222;
 }
 
+.khung {
+    width: 75%;
+    height: 550px;
+    margin: 32px auto 0;
+}
+
+.container2 {
+    display: flex;
+    gap: 2%;
+    flex-wrap: wrap;
+    align-content: start;
+    flex-direction: row;
+
+}
+
+.item:nth-child(1) {
+    width: 25%;
+    height: 500px;
+    align-self: center;
+    /* background-color: #ffffff; */
+}
+
+/* Kiểu dáng chung cho container */
+.dropdown-menu-container {
+    width: 250px;
+    /* Điều chỉnh chiều rộng theo ý bạn */
+    font-family: Arial, sans-serif;
+}
+
+/* Kiểu dáng cho nút/header menu */
+.dropdown-toggle {
+    background-color: #8BC34A;
+    /* Màu nền xanh lá cây tương tự ảnh */
+    color: white;
+    padding: 10px 15px;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    display: flex;
+    /* Dùng flexbox để căn chỉnh các mục */
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+    box-sizing: border-box;
+    /* Quan trọng để padding không làm tăng chiều rộng */
+}
+
+.menu-icon {
+    margin-right: 10px;
+}
+
+.arrow-icon {
+    margin-left: auto;
+    /* Đẩy mũi tên sang phải */
+    font-size: 10px;
+}
+
+/* Kiểu dáng cho danh sách (list) */
+.dropdown-list {
+    list-style-type: none;
+    /* Bỏ dấu chấm đầu dòng */
+    padding: 0;
+    margin: 0;
+    border: 1px solid #ccc;
+    border-top: none;
+    /* --- PHẦN QUAN TRỌNG: ẨN BAN ĐẦU --- */
+    max-height: 0;
+    /* Ẩn danh sách bằng cách đặt chiều cao tối đa là 0 */
+    overflow: hidden;
+    /* Giúp ẩn nội dung khi max-height là 0 */
+    transition: max-height 0.3s ease-out;
+    /* Tạo hiệu ứng đóng mở mượt mà */
+}
+
+/* Kiểu dáng cho các mục trong danh sách */
+.dropdown-list li a {
+    display: block;
+    /* Giúp toàn bộ khu vực li là clickable */
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+}
+
+.dropdown-list li a:hover {
+    background-color: #f1f1f1;
+    /* Hiệu ứng hover */
+}
+
+/* Class được thêm bằng JavaScript để HIỂN THỊ danh sách */
+.dropdown-list.show {
+    max-height: 500px;
+    /* Đặt một giá trị đủ lớn để hiển thị toàn bộ danh sách */
+    border-top: 1px solid #ccc;
+    /* Thêm lại border-top nếu cần */
+}
+
+.item:nth-child(2) {
+    width: 73%;
+    height: 500px;
+    align-self: center;
+    /* background-color: #c22323; */
+}
+
+.container2__left__top {
+    display: flex;
+    gap: 2%;
+    flex-wrap: wrap;
+    align-content: start;
+    flex-direction: column;
+}
+
+.container2__left__top__child:nth-child(1) {
+    width: 100%;
+    height: 50px;
+    /* background-color: #1aab1c; */
+}
+
+/* Kiểu dáng chung cho Header */
+.header-content {
+    display: flex;
+    /* Bật Flexbox cho container chính */
+    justify-content: space-between;
+    /* Đẩy khu vực tìm kiếm và liên hệ ra hai phía */
+    align-items: center;
+    padding: 0px 0;
+    font-family: Arial, sans-serif;
+    max-width: 1200px;
+    /* Giả định chiều rộng tối đa của trang */
+    margin: 0 auto;
+}
+
+/* 1. Khu vực Tìm kiếm */
+.search-bar-container {
+    display: flex;
+    border: 1px solid #ccc;
+    height: 40px;
+    /* Chiều cao cho thanh tìm kiếm */
+}
+
+/* Dropdown Danh mục */
+.search-dropdown {
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    background-color: #fff;
+    border-right: 1px solid #ccc;
+}
+
+.search-dropdown select {
+    border: none;
+    background: transparent;
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+    /* Bỏ mũi tên mặc định trên Chrome/Firefox */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding-right: 20px;
+    /* Tạo khoảng trống để giả làm mũi tên tùy chỉnh nếu cần */
+}
+
+/* Input Tìm kiếm */
+.search-input {
+    border: none;
+    padding: 0 15px;
+    flex-grow: 1;
+    /* Cho phép input mở rộng tối đa */
+    font-size: 14px;
+    color: #888;
+}
+
+.search-input::placeholder {
+    color: #bbb;
+}
+
+/* Nút Tìm kiếm */
+.search-button {
+    background-color: #8BC34A;
+    /* Màu xanh lá cây */
+    color: white;
+    border: none;
+    padding: 0 20px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    height: 100%;
+}
+
+.search-button:hover {
+    background-color: #7CB342;
+}
+
+
+/* 2. Khu vực Liên hệ */
+.contact-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Biểu tượng Điện thoại (Hình tròn) */
+.phone-icon-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #f5f5f5;
+    /* Màu nền xám nhạt */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #8BC34A;
+    /* Màu xanh lá cây cho biểu tượng */
+    font-size: 18px;
+}
+
+/* Văn bản Liên hệ */
+.contact-text {
+    line-height: 1.2;
+    /* Điều chỉnh khoảng cách dòng */
+}
+
+.phone-number {
+    font-weight: bold;
+    font-size: 16px;
+    color: #333;
+}
+
+.support-time {
+    font-size: 12px;
+    color: #888;
+}
+
+.container2__left__top__child:nth-child(2) {
+    width: 100%;
+    height: 450px;
+    background-image: url("../Images/brg-img.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+}
+
+.container2__text {
+    width: 30%;
+    height: 100%;
+    margin-left: 15%;
+    display: flex;
+    align-items: center;
+}
+
+.container2__text__child {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.container2__text__child1:nth-child(1) {
+    color: #8bc34a;
+    font-size: 25px;
+    font-weight: 600;
+}
+.container2__text__child1:nth-child(2) {
+    color: #8bc34a;
+    margin: 16px auto;
+    font-size: 45px;
+    font-weight: 800;
+}
+.container2__text__child1:nth-child(3) {
+    color: #8bc34a;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* -------------------- RESPONSIVE DESIGN (Cho Mobile và Tablet) -------------------- */
 
 /* Tablet (Màn hình dưới 992px) */
@@ -276,6 +591,7 @@ ul {
 
 /* Mobile (Màn hình dưới 768px) */
 @media (max-width: 768px) {
+
     /* Header Responsive */
     .header-main .container {
         flex-wrap: wrap;
@@ -283,7 +599,8 @@ ul {
     }
 
     .search-bar {
-        order: 3; /* Đưa thanh search xuống dưới cùng */
+        order: 3;
+        /* Đưa thanh search xuống dưới cùng */
         width: 100%;
         max-width: none;
         margin-right: 0;
@@ -293,12 +610,18 @@ ul {
         order: 2;
     }
 
+    .header-contact-email {
+        margin-right: 0px;
+    }
+
     .header-contact {
-        display: none; /* Ẩn số hotline trên di động */
+        display: none;
+        /* Ẩn số hotline trên di động */
     }
 
     .menu-toggle {
-        display: block; /* Hiện nút menu */
+        display: block;
+        /* Hiện nút menu */
         background-color: #007bff;
         color: white;
         padding: 10px;
@@ -308,11 +631,13 @@ ul {
     /* Navigation Responsive (Ẩn menu chính) */
     .main-nav ul {
         flex-direction: column;
-        display: none; /* Mặc định ẩn trên mobile */
+        display: none;
+        /* Mặc định ẩn trên mobile */
     }
 
     .main-nav.active ul {
-        display: flex; /* Hiện khi có class 'active' */
+        display: flex;
+        /* Hiện khi có class 'active' */
         padding: 0;
     }
 
@@ -326,7 +651,7 @@ ul {
         /* Chuyển sang 2 cột */
         grid-template-columns: repeat(2, 1fr);
     }
-    
+
     /* Footer Responsive */
     .footer-content {
         flex-direction: column;
@@ -340,9 +665,11 @@ ul {
         /* Chuyển sang 1 cột */
         grid-template-columns: 1fr;
     }
+
     .user-actions {
         gap: 5px;
     }
+
     .user-actions a {
         font-size: 0.9em;
     }

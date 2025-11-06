@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shop VNB Mockup - Cầu Lông & Thể Thao</title>
     <link rel="stylesheet" href="./Styles/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
+
 <body>
 
     <header class="header">
@@ -14,6 +17,9 @@
             <div class="container">
                 <img src="./Images/logo.svg" alt="">
                 <a href="#" class="logo"></a>
+                <div class="header-contact-email">
+                    <i class="glyphicon glyphicon-envelope"></i> email: Hello@gmail.com
+                </div>
                 <div class="header-contact">
                     <i class="fas fa-phone-alt"></i> Hotline: 0977 508 430
                 </div>
@@ -48,6 +54,76 @@
         </div>
     </nav>
 
+    <div class="khung">
+        <div class="container2">
+            <div class="item">
+                <div class="dropdown-menu-container">
+                    <button class="dropdown-toggle" id="dropdown-button">
+                        <span class="menu-icon">&#9776;</span> <span class="menu-text">All departments</span>
+                        <span class="arrow-icon">&#9662;</span> </button>
+
+                    <ul class="dropdown-list" id="departments-list">
+                        <li><a href="#">Vợt cầu lông</a></li>
+                        <li><a href="#">Giầy cầu lông</a></li>
+                        <li><a href="#">Áo cầu lông</a></li>
+                        <li><a href="#">quần cầu lông</a></li>
+                        <li><a href="#">Váy cầu lông</a></li>
+                        <li><a href="#">Túi vợt cầu lông</a></li>
+                        <li><a href="#">Balo cầu lông</a></li>
+                        <li><a href="#">Phụ kiện cầu lông</a></li>
+                        <li><a href="#">Vợt Pickleball</a></li>
+                        <li><a href="#">Giầy Pickleball</a></li>
+                        <li><a href="#">Túi Pickleball</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="item">
+                <div class="container2__left__top">
+                    <div class="container2__left__top__child">
+                        <div class="header-content">
+                            <div class="search-bar-container">
+                                <div class="search-dropdown">
+                                    <select name="categories" id="categories-select">
+                                        <option value="all">All Categories</option>
+                                        <option value="electronics">Electronics</option>
+                                        <option value="clothing">Clothing</option>
+                                    </select>
+                                </div>
+                                <input type="text" placeholder="What do yo u need?" class="search-input">
+                                <button class="search-button">SEARCH</button>
+                            </div>
+
+                            <div class="contact-info">
+                                <div class="phone-icon-circle">
+                                    <span class="phone-icon">&#9742;</span>
+                                </div>
+                                <div class="contact-text">
+                                    <div class="phone-number">+65 11.188.888</div>
+                                    <div class="support-time">support 24/7 time</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container2__left__top__child">
+                        <div class="container2__text">
+                            <div class="container2__text__child">
+                                <div class="container2__text__child1">Đến Ngay</div>
+                                <div class="container2__text__child1">Shop VNB</div>
+                                <div class="container2__text__child1">Siêu ưu đãi</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
     <main class="container content">
         <section class="banner-slider">
             <img src="./Images/grpht-thrttl_1759089897.webp" alt="">
@@ -67,7 +143,7 @@
                     <img src="./Images/vot-cau-long-vnb-v200-xanh-2.webp" alt="Giày Cầu Lông Victor">
                     <h3>Giày Cầu Lông Victor A970 ACE</h3>
                     <p class="price current-price">1.850.000₫</p>
-                    <button class="add-to-cart" >Thêm vào giỏ</button>
+                    <button class="add-to-cart">Thêm vào giỏ</button>
                 </div>
                 <div class="product-card">
                     <img src="./Images/vot-cau-long-vnb-v200-xanh-2.webp" alt="Balo Thể Thao">
@@ -119,4 +195,5 @@
 
     <script src="./Scripts/main.js"></script>
 </body>
+
 </html>

@@ -38,3 +38,26 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Lấy các phần tử cần thiết
+    const dropdownButton = document.getElementById('dropdown-button');
+    const departmentsList = document.getElementById('departments-list');
+
+    // Thêm lắng nghe sự kiện click vào nút
+    dropdownButton.addEventListener('click', function() {
+        // Hàm toggle() sẽ thêm class 'show' nếu nó không có, và xóa nếu nó đã có.
+        departmentsList.classList.toggle('show');
+
+        // (Tùy chọn) Thay đổi biểu tượng mũi tên khi mở/đóng
+        const arrowIcon = dropdownButton.querySelector('.arrow-icon');
+        if (departmentsList.classList.contains('show')) {
+            arrowIcon.innerHTML = '&#9652;'; // Mũi tên lên
+        } else {
+            arrowIcon.innerHTML = '&#9662;'; // Mũi tên xuống
+        }
+    });
+});
