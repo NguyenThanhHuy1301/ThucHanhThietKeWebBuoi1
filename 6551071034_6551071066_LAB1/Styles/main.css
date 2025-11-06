@@ -779,7 +779,7 @@ ul {
 }
 
 .footer-content {
-    display: grid;
+    display: flex;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 40px;
 }
