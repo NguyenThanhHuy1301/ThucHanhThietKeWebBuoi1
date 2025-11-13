@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Áo Cầu Lông - Shop VNB Mockup</title>
+    <title>Balo & Túi Cầu Lông Chính Hãng | Chứa Vợt, Giày Chuyên Nghiệp</title>
     <link rel="stylesheet" href="./Styles/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -28,7 +28,7 @@
         <div class="header-main">
             <div class="container">
                 <div class="search-bar">
-                    <input type="text" placeholder="Tìm kiếm áo cầu lông, quần, phụ kiện...">
+                    <input type="text" placeholder="Tìm kiếm balo, túi vợt, phụ kiện...">
                     <button><i class="fas fa-search"></i></button>
                 </div>
                 <nav class="user-actions">
@@ -47,8 +47,8 @@
                 <li><a href="shop.html">Shop</a></li>
                 <li><a href="giay_cau_long.html">Giày Cầu Lông</a></li>
                 <li><a href="vot_cau_long.html">Vợt Cầu Lông</a></li>
-                <li><a href="ao_cau_long.html" class="active-nav">Áo Cầu Lông</a></li>
-                <li><a href="balo_tui.html">Balo & Túi</a></li>
+                <li><a href="ao_cau_long.html">Áo Cầu Lông</a></li>
+                <li><a href="balo_tui.html" class="active-nav">Balo & Túi</a></li>
                 <li><a href="phu_kien.html">Phụ Kiện</a></li>
                 <li><a href="tin_tuc.html">Tin Tức</a></li>
             </ul>
@@ -57,10 +57,10 @@
     <main class="container content page-shop">
         
         <div class="breadcrumb">
-            <a href="index.html">Trang chủ</a> &gt; <span>Áo Cầu Lông</span>
+            <a href="index.html">Trang chủ</a> &gt; <span>Balo & Túi</span>
         </div>
 
-        <h1 class="page-shop-title">ÁO CẦU LÔNG CHÍNH HÃNG (180 Sản Phẩm)</h1>
+        <h1 class="page-shop-title">BALO & TÚI CẦU LÔNG CHÍNH HÃNG (120 Sản Phẩm)</h1>
 
         <div class="shop-layout">
             
@@ -70,33 +70,36 @@
                 <div class="filter-group">
                     <h4>Thương Hiệu</h4>
                     <ul>
-                        <li><label><input type="checkbox"> Yonex (45)</label></li>
-                        <li><label><input type="checkbox"> Victor (30)</label></li>
-                        <li><label><input type="checkbox"> Lining (25)</label></li>
-                        <li><label><input type="checkbox"> Mizuno (20)</label></li>
+                        <li><label><input type="checkbox"> Yonex (35)</label></li>
+                        <li><label><input type="checkbox"> Victor (25)</label></li>
+                        <li><label><input type="checkbox"> Lining (20)</label></li>
+                        <li><label><input type="checkbox"> Mizuno (15)</label></li>
                         <li><label><input type="checkbox"> VNB (10)</label></li>
                     </ul>
                 </div>
 
                 <div class="filter-group">
                     <h4>Mức Giá</h4>
-                    <input type="range" min="150000" max="1500000" value="1500000" class="price-slider">
-                    <p>Khoảng giá: <span id="price-min">150.000₫</span> - <span id="price-max">1.500.000₫</span></p>
+                    <input type="range" min="300000" max="2500000" value="2500000" class="price-slider">
+                    <p>Khoảng giá: <span id="price-min">300.000₫</span> - <span id="price-max">2.500.000₫</span></p>
                 </div>
 
                 <div class="filter-group">
-                    <h4>Size Áo</h4>
-                    <div class="size-options">
-                        <span>S</span><span>M</span><span>L</span><span>XL</span><span>2XL</span><span>3XL</span>
+                    <h4>Loại Túi</h4>
+                    <div class="size-options"> 
+                        <span data-size="Balo">Balo (20)</span>
+                        <span data-size="Túi Vuông">Túi Vuông (30)</span>
+                        <span data-size="Túi Đơn">Túi Đơn (40)</span>
+                        <span data-size="Túi Cần">Túi Cần (15)</span>
                     </div>
                 </div>
                 
                 <div class="filter-group">
-                    <h4>Chất Liệu</h4>
+                    <h4>Sức Chứa Vợt</h4>
                     <ul>
-                        <li><label><input type="checkbox"> Vải Dry-Fit</label></li>
-                        <li><label><input type="checkbox"> Polyester</label></li>
-                        <li><label><input type="checkbox"> Vải Mè</label></li>
+                        <li><label><input type="checkbox"> 1 - 2 Vợt</label></li>
+                        <li><label><input type="checkbox"> 3 - 6 Vợt</label></li>
+                        <li><label><input type="checkbox"> 9 - 12 Vợt</label></li>
                     </ul>
                 </div>
 
@@ -118,47 +121,47 @@
                 <div class="product-grid shop-grid">
                     
                     <div class="product-card">
-                        <img src="Images/ao2.webp" alt="Áo Cầu Lông Yonex Trắng">
-                        <h3>Áo Cầu Lông Yonex Mát Lạnh (Phiên bản 2024)</h3>
-                        <p class="price current-price">750.000₫</p>
+                        <img src="Images/balo2.webp" onerror="this.src='Images/placeholder.webp';" alt="Balo Cầu Lông Yonex">
+                        <h3>Balo Cầu Lông Yonex BA218 New (Chứa 2 vợt)</h3>
+                        <p class="price current-price">850.000₫</p>
                         <button class="add-to-cart">Thêm vào giỏ</button>
                     </div>
 
                     <div class="product-card">
-                        <img src="Images/ao3.webp" alt="Áo Cầu Lông Victor Xanh">
-                        <p class="sale-tag">-10%</p>
-                        <h3>Áo Cầu Lông Victor V-Series (Chất liệu Dry)</h3>
-                        <p class="price old-price">600.000₫</p>
-                        <p class="price current-price">540.000₫</p>
+                        <img src="Images/tuivot1.webp" onerror="this.src='Images/placeholder.webp';" alt="Túi Cầu Lông Victor">
+                        <p class="sale-tag">-15%</p>
+                        <h3>Túi Vợt Victor BR-series (Chứa 6 vợt)</h3>
+                        <p class="price old-price">1.200.000₫</p>
+                        <p class="price current-price">1.020.000₫</p>
                         <button class="add-to-cart">Thêm vào giỏ</button>
                     </div>
                     
                     <div class="product-card">
-                        <img src="Images/ao4.webp" alt="Áo Cầu Lông Lining Trắng Đỏ">
-                        <h3>Áo Lining Dry Comfort Thấm Hút Mồ Hôi</h3>
-                        <p class="price current-price">450.000₫</p>
+                        <img src="Images/balo3.webp" onerror="this.src='Images/placeholder.webp';" alt="Balo Cầu Lông Lining">
+                        <h3>Balo Lining ABJR001 Đa Năng Cao Cấp</h3>
+                        <p class="price current-price">790.000₫</p>
                         <button class="add-to-cart">Thêm vào giỏ</button>
                     </div>
 
                     <div class="product-card">
-                        <img src="Images/ao5.webp" alt="Áo Cầu Lông Mizuno Cam Đen">
-                        <h3>Áo Mizuno Pro A-Line (Màu Cam Đen)</h3>
-                        <p class="price current-price">890.000₫</p>
+                        <img src="Images/tuivot2.webp" onerror="this.src='Images/placeholder.webp';" alt="Túi Cầu Lông Mizuno">
+                        <h3>Túi Cần Vợt Mizuno Pro (Dài, chứa 3 vợt)</h3>
+                        <p class="price current-price">490.000₫</p>
                         <button class="add-to-cart">Thêm vào giỏ</button>
                     </div>
 
                     <div class="product-card">
-                        <img src="Images/ao6.webp" alt="Áo Cầu Lông VNB V2 Xanh">
-                        <h3>Áo Cầu Lông VNB V3 Xanh Ngọc Giá Rẻ</h3>
-                        <p class="price old-price">350.000₫</p>
-                        <p class="price current-price">320.000₫</p>
+                        <img src="Images/tuivot3.webp" onerror="this.src='Images/placeholder.webp';" alt="Túi Cầu Lông VNB">
+                        <h3>Túi Vuông VNB Xanh Đen (Chứa 9 vợt)</h3>
+                        <p class="price old-price">950.000₫</p>
+                        <p class="price current-price">850.000₫</p>
                         <button class="add-to-cart">Thêm vào giỏ</button>
                     </div>
                     
                     <div class="product-card">
-                        <img src="Images/ao7.webp" alt="Áo Cầu Lông Flypower Vàng">
-                        <h3>Áo Cầu Lông Flypower Vàng Năng Động</h3>
-                        <p class="price current-price">699.000₫</p>
+                        <img src="Images/balo4.webp" onerror="this.src='Images/placeholder.webp';" alt="Balo Flypower">
+                        <h3>Balo Flypower Sức Chứa Lớn Chống Nước</h3>
+                        <p class="price current-price">599.000₫</p>
                         <button class="add-to-cart">Thêm vào giỏ</button>
                     </div>
 
