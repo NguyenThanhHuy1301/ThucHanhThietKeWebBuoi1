@@ -867,3 +867,72 @@ ul {
     font-size: 14px;
     color: #777;
 }
+
+
+/* ==== TRANG TIN TỨC ==== */
+.news-page {
+    margin-top: 40px;
+}
+
+.page-title {
+    text-align: center;
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.news-card {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+}
+
+.news-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.news-info {
+    padding: 15px 20px;
+}
+
+.news-info .date {
+    color: #888;
+    font-size: 14px;
+}
+
+.news-info h3 {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #222;
+}
+
+.news-info p {
+    color: #555;
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.news-info .read-more {
+    color: #ff5722;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.news-info .read-more:hover {
+    text-decoration: underline;
+}
