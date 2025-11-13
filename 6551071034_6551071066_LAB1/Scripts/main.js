@@ -181,3 +181,60 @@ document.addEventListener('DOMContentLoaded', function() {
 
   console.log('Slider ready. Try click buttons or drag horizontally.');
 })();
+document.addEventListener('DOMContentLoaded', () => {
+    const newsGrid = document.querySelector('.news-grid');
+    const allNews = Array.from(newsGrid.children);
+    const perPage = 6;
+    let currentPage = 1;
+
+    const pagination = document.querySelector('.pagination');
+    const prevBtn = pagination.querySelector('.prev');
+    const nextBtn = pagination.querySelector('.next');
+    const pageButtons = Array.from(pagination.querySelectorAll('.page-btn')).filter(btn => !btn.classList.contains('prev') && !btn.classList.contains('next'));
+
+    function showPage(page) {
+        const start = (page - 1) * perPage;
+        const end = page * perPage;
+
+        allNews.forEach((news, index) => {
+            news.style.display = index >= start && index < end ? 'block' : 'none';
+        });
+
+        currentPage = page;
+        prevBtn.disabled = currentPage === 1;
+        nextBtn.disabled = currentPage === pageButtons.length;
+
+        pageButtons.forEach(btn => btn.classList.remove('active'));
+        pageButtons[page - 1].classList.add('active');
+    }
+
+    // click số trang
+    pageButtons.forEach((btn, index) => {
+        btn.addEventListener('click', () => showPage(index + 1));
+    });
+
+    // click prev/next
+    prevBtn.addEventListener('click', () => {
+        if (currentPage > 1) showPage(currentPage - 1);
+    });
+    nextBtn.addEventListener('click', () => {
+        if (currentPage < pageButtons.length) showPage(currentPage + 1);
+    });
+
+    // hiển thị trang 1 mặc định
+    showPage(1);
+});
+document.querySelectorAll('.read-more-btn').forEach(btn => {
+    btn.addEventListener('click', function(e){
+        e.preventDefault();
+        const moreText = this.previousElementSibling; // span.more-text
+        if(moreText.style.display === 'none') {
+            moreText.style.display = 'inline';
+            this.textContent = 'Thu gọn ←';
+        } else {
+            moreText.style.display = 'none';
+            this.textContent = 'Đọc thêm →';
+        }
+    });
+});
+

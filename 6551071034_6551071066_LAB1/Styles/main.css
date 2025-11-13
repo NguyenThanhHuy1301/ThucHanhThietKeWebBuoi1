@@ -936,3 +936,38 @@ ul {
 .news-info .read-more:hover {
     text-decoration: underline;
 }
+/* ===== Pagination ===== */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin: 30px 0;
+    flex-wrap: wrap;
+}
+
+.pagination .page-btn {
+    padding: 8px 14px;
+    border: 1px solid #ccc;
+    background: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 0.95em;
+    transition: all 0.2s;
+}
+
+.pagination .page-btn:hover:not(.active) {
+    background: #007bff;
+    color: #fff;
+}
+
+.pagination .page-btn.active {
+    background: #007bff;
+    color: #fff;
+    border-color: #007bff;
+}
+
+.pagination .page-btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
