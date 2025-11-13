@@ -970,4 +970,178 @@ ul {
     cursor: not-allowed;
     opacity: 0.5;
 }
+/* ======================================= */
+/* ====== SHOP PAGE / LISTING STYLES ===== */
+/* ======================================= */
+
+.breadcrumb {
+    padding: 15px 0;
+    font-size: 0.9em;
+    color: #666;
+}
+
+.breadcrumb span {
+    font-weight: bold;
+    color: #007bff;
+}
+
+.page-shop-title {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.shop-layout {
+    display: flex;
+    gap: 30px;
+}
+
+/* Sidebar Filter */
+.sidebar-filter {
+    flex: 0 0 250px; /* Chiều rộng cố định cho sidebar */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.sidebar-filter h3 {
+    font-size: 1.3em;
+    margin-bottom: 20px;
+    color: #007bff;
+}
+
+.filter-group {
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.filter-group h4 {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.filter-group ul {
+    list-style: none;
+    padding: 0;
+}
+
+.filter-group ul li {
+    margin-bottom: 8px;
+}
+
+.size-options span {
+    display: inline-block;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin: 5px 5px 0 0;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.size-options span:hover {
+    border-color: #007bff;
+    background-color: #e6f0ff;
+}
+
+.btn-filter-apply {
+    width: 100%;
+    background-color: #ff5722;
+    color: white;
+    padding: 10px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+/* Main Product List */
+.main-product-list {
+    flex-grow: 1;
+}
+
+.sort-options {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 20px;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.sort-options select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-left: 10px;
+}
+
+.product-grid.shop-grid {
+    /* Đảm bảo nó là lưới 4 cột cố định trên trang shop */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    flex-wrap: wrap; /* Cho phép xuống hàng */
+    overflow-x: hidden; /* Vô hiệu hóa cuộn ngang của slider */
+    padding: 0;
+}
+
+/* Responsive cho trang Shop */
+@media (max-width: 1200px) {
+    .product-grid.shop-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 992px) {
+    .shop-layout {
+        flex-direction: column;
+    }
+
+    .sidebar-filter {
+        flex: none;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .product-grid.shop-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .product-grid.shop-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* Thêm vào cuối file Styles/main.css */
+
+/* --- Custom Styles for Shop Page --- */
+
+/* 1. Size Options Styling */
+.size-options {
+    display: flex;
+    flex-wrap: wrap;
+}
+.size-options span {
+    /* Đã định nghĩa cơ bản, thêm trạng thái active */
+    transition: all 0.2s;
+}
+.size-options span.active {
+    background-color: #007bff; /* Màu xanh khi được chọn */
+    color: white;
+    border-color: #007bff;
+    font-weight: bold;
+}
+
+/* 2. Price Range Slider Styling (Optional - dùng CSS tùy chỉnh) */
+.price-slider {
+    width: 100%;
+    margin: 15px 0 5px;
+}
+
 

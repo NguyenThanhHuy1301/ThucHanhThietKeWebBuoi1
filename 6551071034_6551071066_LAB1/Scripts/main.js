@@ -224,17 +224,167 @@ document.addEventListener('DOMContentLoaded', () => {
     // hiển thị trang 1 mặc định
     showPage(1);
 });
-document.querySelectorAll('.read-more-btn').forEach(btn => {
-    btn.addEventListener('click', function(e){
-        e.preventDefault();
-        const moreText = this.previousElementSibling; // span.more-text
-        if(moreText.style.display === 'none') {
-            moreText.style.display = 'inline';
-            this.textContent = 'Thu gọn ←';
-        } else {
-            moreText.style.display = 'none';
-            this.textContent = 'Đọc thêm →';
-        }
-    });
-});
+// ===============================================
+// === DỮ LIỆU SẢN PHẨM MẪU (SIMULATED BACKEND) ===
+// ===============================================
+const productsData = [
+    { id: 1, name: "Giày Victor A970 ACE", price: 1850000, size: [39, 40, 41, 42], isNew: false, image: "./Images/giay2.webp" },
+    { id: 2, name: "Giày Yonex 65Z3", price: 2340000, size: [40, 41, 43], isNew: false, image: "./Images/giay1.webp" },
+    { id: 3, name: "Giày Lining AYAR001", price: 1290000, size: [38, 39, 40], isNew: true, image: "./Images/giay_lining.webp" },
+    { id: 4, name: "Giày Mizuno Sky Blaster 3", price: 980000, size: [41, 42], isNew: false, image: "./Images/giay_mizuno.webp" },
+    { id: 5, name: "Giày VNB V2", price: 590000, size: [38, 39, 40, 41], isNew: false, image: "./Images/giay_vnb_v2.webp" },
+]; // Chỉ giữ 5 sản phẩm mẫu để code gọn nhẹ nhất
 
+const formatVND = (value) => new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(value);
+let cartCount = 0;
+
+document.addEventListener('DOMContentLoaded', function() {
+    
+    const cartButton = document.getElementById('cart-button');
+    const productGrid = document.querySelector('.product-grid.shop-grid');
+    
+    // --- 1. CHỨC NĂNG CƠ BẢN (MOBILE MENU VÀ GIỎ HÀNG) ---
+
+    // Mobile Menu Toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const mainNav = document.getElementById('main-nav');
+    if (menuToggle && mainNav) {
+        menuToggle.addEventListener('click', () => mainNav.classList.toggle('active'));
+    }
+
+    // Thêm vào Giỏ hàng (Kèm Thông báo)
+    function handleAddToCart(event) {
+        const productCard = event.target.closest('.product-card');
+        if (!productCard) return;
+        
+        const productName = productCard.querySelector('h3') ? productCard.querySelector('h3').textContent : 'Sản phẩm không tên';
+        cartCount++;
+        if (cartButton) {
+            cartButton.innerHTML = `<i class="fas fa-shopping-cart"></i> Giỏ hàng (${cartCount})`;
+        }
+        alert(`Đã thêm "${productName}" vào giỏ hàng!`); 
+    }
+    
+    // Gán sự kiện Giỏ hàng cho các nút ban đầu
+    document.querySelectorAll('.add-to-cart').forEach(button => {
+        button.addEventListener('click', handleAddToCart);
+    });
+    
+    // ===========================================
+    // 2. LOGIC LỌC/SẮP XẾP CHO TRANG SHOP
+    // ===========================================
+    
+    if (productGrid) {
+        initializeShopPage(handleAddToCart);
+    }
+    
+    function initializeShopPage(onAddToCart) {
+        
+        const sortBySelect = document.getElementById('sort-by');
+        const sizeOptionsContainer = document.querySelector('.size-options');
+        const priceSlider = document.querySelector('.price-slider');
+        const priceMinSpan = document.getElementById('price-min');
+        const priceMaxSpan = document.getElementById('price-max');
+
+
+        let currentFilters = {
+            sizes: [], 
+            sortBy: sortBySelect ? sortBySelect.value : 'default'
+        };
+        
+        // Hàm tạo HTML cho sản phẩm
+        function createProductCardHTML(product) {
+            const saleTag = product.oldPrice ? `<p class="sale-tag">-${Math.round((product.oldPrice - product.price) / product.oldPrice * 100)}%</p>` : '';
+            const oldPriceHTML = product.oldPrice ? `<p class="price old-price">${product.oldPrice}</p>` : '';
+            
+            return `
+                <div class="product-card" data-id="${product.id}">
+                    ${saleTag}
+                    <img src="${product.image}" onerror="this.src='./Images/placeholder.webp';" alt="${product.name}">
+                    <h3>${product.name}</h3>
+                    ${oldPriceHTML}
+                    <p class="price current-price">${formatVND(product.price)}</p>
+                    <button class="add-to-cart">Thêm vào giỏ</button>
+                </div>
+            `;
+        }
+        
+        // Hàm Hiển thị Sản phẩm (cập nhật lưới)
+        function renderProducts(filteredProducts) {
+            productGrid.innerHTML = filteredProducts.map(createProductCardHTML).join('');
+            
+            // Cập nhật số lượng sản phẩm
+            const titleCount = document.querySelector('.page-shop-title');
+            if (titleCount) {
+                 titleCount.textContent = `GIÀY CẦU LÔNG CHÍNH HÃNG (${filteredProducts.length} Sản Phẩm)`;
+            }
+            
+            // Gán lại sự kiện giỏ hàng cho các nút mới
+            document.querySelectorAll('.add-to-cart').forEach(button => {
+                button.addEventListener('click', onAddToCart);
+            });
+        }
+
+        // Hàm Chính: Lọc và Sắp xếp
+        function applyFiltersAndSort() {
+            let filtered = [...productsData];
+
+            // 1. Lọc theo Kích cỡ (SIZE)
+            if (currentFilters.sizes.length > 0) {
+                filtered = filtered.filter(p => 
+                    p.size && p.size.some(s => currentFilters.sizes.includes(s))
+                );
+            }
+
+            // 2. Sắp xếp (GIÁ)
+            switch (currentFilters.sortBy) {
+                case 'price-asc':
+                    filtered.sort((a, b) => a.price - b.price);
+                    break;
+                case 'price-desc':
+                    filtered.sort((a, b) => b.price - a.price);
+                    break;
+                default:
+                    filtered.sort((a, b) => a.id - b.id);
+                    break;
+            }
+
+            renderProducts(filtered);
+        }
+
+        // --- Lắng nghe sự kiện ---
+
+        // A. Lọc theo Kích cỡ (SIZE)
+        if (sizeOptionsContainer) {
+             sizeOptionsContainer.addEventListener('click', (event) => {
+                const target = event.target;
+                if (target.tagName === 'SPAN') {
+                    target.classList.toggle('active');
+                    currentFilters.sizes = Array.from(document.querySelectorAll('.size-options span.active'))
+                                          .map(s => parseInt(s.textContent));
+                    applyFiltersAndSort();
+                }
+            });
+        }
+
+        // B. Sắp xếp theo Giá (SORT BY PRICE)
+        if (sortBySelect) {
+            sortBySelect.addEventListener('change', function() {
+                currentFilters.sortBy = this.value;
+                applyFiltersAndSort();
+            });
+        }
+        
+        // C. Thanh trượt Giá (Chỉ hiển thị)
+        if (priceSlider) {
+            priceMinSpan.textContent = formatVND(priceSlider.min);
+            priceMaxSpan.textContent = formatVND(priceSlider.max);
+            priceSlider.addEventListener('input', function() {
+                priceMaxSpan.textContent = formatVND(parseInt(this.value));
+            });
+        }
+        
+        // Tải trang lần đầu
+        applyFiltersAndSort(); 
+    }
+});

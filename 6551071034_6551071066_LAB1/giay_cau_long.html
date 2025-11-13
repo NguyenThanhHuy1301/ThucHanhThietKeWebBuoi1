@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giày Cầu Lông - Shop VNB Mockup</title>
+    <link rel="stylesheet" href="./Styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <img src="./Images/logo.svg" alt="Logo VNB">
+                <a href="#" class="logo"></a>
+                <div class="header-contact-email">
+                    <i class="glyphicon glyphicon-envelope"></i> email: Hello@gmail.com
+                </div>
+                <div class="header-contact">
+                    <i class="fas fa-phone-alt"></i> Hotline: 0977 508 430
+                </div>
+            </div>
+        </div>
+        <div class="header-main">
+            <div class="container">
+                <div class="search-bar">
+                    <input type="text" placeholder="Tìm kiếm vợt cầu lông, giày...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <nav class="user-actions">
+                    <a href="#"><i class="fas fa-user"></i> Tài khoản</a>
+                    <button id="cart-button"><i class="fas fa-shopping-cart"></i> Giỏ hàng (0)</button>
+                    <button class="menu-toggle" id="menu-toggle"><i class="fas fa-bars"></i></button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <nav class="main-nav" id="main-nav">
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Trang chủ</a></li>
+                <li><a href="#">Shop</a></li>
+                <li><a href="#" class="active-nav">Giày Cầu Lông</a></li>
+                <li><a href="#">Áo Cầu Lông</a></li>
+                <li><a href="#">Balo & Túi</a></li>
+                <li><a href="#">Phụ Kiện</a></li>
+                <li><a href="tin_tuc.html">Tin Tức</a></li>
+            </ul>
+        </div>
+    </nav>
+    <main class="container content page-shop">
+        
+        <div class="breadcrumb">
+            <a href="index.html">Trang chủ</a> &gt; <span>Giày Cầu Lông</span>
+        </div>
+
+        <h1 class="page-shop-title">GIÀY CẦU LÔNG CHÍNH HÃNG (245 Sản Phẩm)</h1>
+
+        <div class="shop-layout">
+            
+            <aside class="sidebar-filter">
+                <h3><i class="fas fa-filter"></i> Bộ Lọc Sản Phẩm</h3>
+                
+                <div class="filter-group">
+                    <h4>Thương Hiệu</h4>
+                    <ul>
+                        <li><label><input type="checkbox"> Yonex (55)</label></li>
+                        <li><label><input type="checkbox"> Victor (40)</label></li>
+                        <li><label><input type="checkbox"> Lining (35)</label></li>
+                        <li><label><input type="checkbox"> Mizuno (28)</label></li>
+                        <li><label><input type="checkbox"> VNB (15)</label></li>
+                    </ul>
+                </div>
+
+                <div class="filter-group">
+                    <h4>Mức Giá</h4>
+                    <input type="range" min="300000" max="4000000" value="4000000" class="price-slider">
+                    <p>Khoảng giá: <span id="price-min">300.000₫</span> - <span id="price-max">4.000.000₫</span></p>
+                </div>
+
+                <div class="filter-group">
+                    <h4>Size Giày</h4>
+                    <div class="size-options">
+                        <span>38</span><span>39</span><span>40</span><span>41</span><span>42</span><span>43</span>
+                    </div>
+                </div>
+
+                <button class="btn-filter-apply">Áp dụng</button>
+            </aside>
+
+            <section class="main-product-list">
+                
+                <div class="sort-options">
+                    <label for="sort-by">Sắp xếp theo:</label>
+                    <select id="sort-by">
+                        <option value="default">Mặc định</option>
+                        <option value="price-asc">Giá: Thấp đến Cao</option>
+                        <option value="price-desc">Giá: Cao đến Thấp</option>
+                        <option value="newest">Mới nhất</option>
+                    </select>
+                </div>
+
+                <div class="product-grid shop-grid">
+                    
+                    <div class="product-card">
+                        <img src="Images/giay2.webp" alt="Giày Cầu Lông Victor A970 ACE">
+                        <h3>Giày Cầu Lông Victor A970 ACE (Best Seller)</h3>
+                        <p class="price current-price">1.850.000₫</p>
+                        <button class="add-to-cart">Thêm vào giỏ</button>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="Images/giay1.webp" alt="Giày Cầu Lông Yonex 65Z3">
+                        <p class="sale-tag">-10%</p>
+                        <h3>Giày Cầu Lông Yonex Power Cushion 65Z3</h3>
+                        <p class="price old-price">2.600.000₫</p>
+                        <p class="price current-price">2.340.000₫</p>
+                        <button class="add-to-cart">Thêm vào giỏ</button>
+                    </div>
+                    
+                    <div class="product-card">
+                        <img src="Images/giay3.webp" alt="Giày Lining AYAR001">
+                        <h3>Giày Lining AYAR001 Đệm Êm Chống Lật Cổ Chân</h3>
+                        <p class="price current-price">1.290.000₫</p>
+                        <button class="add-to-cart">Thêm vào giỏ</button>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="Images/giay4.webp" alt="Giày Mizuno Sky Blaster 3">
+                        <h3>Giày Mizuno Sky Blaster 3 (Màu Xanh Đen)</h3>
+                        <p class="price current-price">980.000₫</p>
+                        <button class="add-to-cart">Thêm vào giỏ</button>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="Images/giay5.webp" alt="Giày VNB V2">
+                        <h3>Giày Cầu Lông VNB V2 Xanh Trắng Giá Rẻ</h3>
+                        <p class="price old-price">650.000₫</p>
+                        <p class="price current-price">590.000₫</p>
+                        <button class="add-to-cart">Thêm vào giỏ</button>
+                    </div>
+                    
+                    <div class="product-card">
+                        <img src="Images/giay6.webp" alt="Giày Flypower">
+                        <h3>Giày Cầu Lông Flypower Pawon Chính Hãng</h3>
+                        <p class="price current-price">799.000₫</p>
+                        <button class="add-to-cart">Thêm vào giỏ</button>
+                    </div>
+
+                    </div>
+                
+                <div class="pagination">
+                    <button class="page-btn prev" disabled><i class="fas fa-chevron-left"></i></button>
+                    <button class="page-btn active">1</button>
+                    <button class="page-btn">2</button>
+                    <button class="page-btn next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-col">
+                <h4>VNB SPORTS</h4>
+                <p>Hệ thống shop cầu lông, tennis, pickleball uy tín tại Việt Nam.</p>
+                <p>Hotline: 0977 508 430</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Chính sách</h4>
+                <ul>
+                    <li><a href="#">Chính sách vận chuyển</a></li>
+                    <li><a href="#">Chính sách đổi trả</a></li>
+                    <li><a href="#">Chính sách bảo hành</a></li>
+                    <li><a href="#">Chính sách bảo mật</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Hướng dẫn</h4>
+                <ul>
+                    <li><a href="#">Hướng dẫn mua hàng</a></li>
+                    <li><a href="#">Hướng dẫn thanh toán</a></li>
+                    <li><a href="#">Kiểm tra đơn hàng</a></li>
+                    <li><a href="#">Hệ thống cửa hàng</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col newsletter">
+                <h4>Đăng ký nhận tin</h4>
+                <p>Nhận thông tin ưu đãi và sản phẩm mới nhất từ VNB.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Nhập email của bạn..." required>
+                    <button type="submit">Đăng ký</button>
+                </form>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 VNB Sports. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="./Scripts/main.js"></script>
+</body>
+</html>
